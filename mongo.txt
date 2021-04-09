@@ -1,0 +1,84 @@
+To start mongodb server: mongod
+to start mongo shell write: mongo
+show dbs: show all database present
+
+db command: show the database where it is pointing
+use <dtabase name>: to switch database
+show collections : show all connections present in db
+
+db.createCollection('<collectionanme>') -> to create collection
+
+db.customers.find(); : to show records in that collection
+db.customers.find().pretty(); -> to show json record in more readable form
+
+######## INSERT COMMANDS ############
+db.<collection name>.insert() : to insert tuple
+ eg:  db.customers.insert({first_name:"yash",last_name:"agrawal"})
+
+how to insert mutiple records? - PASS ARRAYLIST IN INSERT
+db.<collection name>.insert([{first_name:"yash",last_name:"agrawal"},{first_name:"rahul",last_name:"singh"}])
+
+################# UPDATE COMMANDS ###################
+Update by adding totally new record
+db.<collectionanme>.update({first_name:"yash"},{first_name:"yash",last_name:"agrawal",gender:"male"})
+
+Update by making updation:
+db.<collectionanme>.update({first_name:"yash"},{$set:{age:33}})
+
+db.<collectionanme>.update({first_name:"yash"},{$inc:{age:5}})
+
+db.<collectionanme>.update({first_name:"yash"},{$unset:{age:1}})
+
+db.<collectionanme>.update({first_name:"yash"},{first_name:"yash",last_name:"agrawal"},{upsert:true})
+If the record is not matching any record in collection it will add new record if upsert is true 
+
+db.<collectionanme>.update({first_name:"yash"},{$rename:{"gender":"sex"}})
+
+######### DELETE COMMANDS ##############
+db.customers.remove({first_name:"yash"},{justOne:true});
+
+db.customers.find({$or:[{first_name:"mary"},{first_name:"steven"}]})
+
+db.customers.insert([
+{
+	first_name: "Troy",
+	last_name:"Makons",
+	gender:"male",
+	age:33,
+	address: {
+		street:"Essex st",
+		city: "Lawrence",
+		state: "MA"	
+	},
+	memberships: ["mem1", "mem2" ],
+	balance: 123.45
+},
+{
+	first_name: "Sharon",
+	last_name:"Williams",
+	gender:"male",
+	age:43,
+	address: {
+		street:"Essex st",
+		city: "Boston",
+		state: "MA"	
+	},
+	memberships: ["mem1", "mem2" ],
+	balance: 123.45
+}
+])
+
+
+db.customers.find({age:{$gt:40}}); //$lt,$lte,$gte
+
+db.customers.find({"address.city":"Boston"});
+
+db.customers.find().sort({last_name:1})
+
+db.customers.find().limit(2) -> Will show only 2 records
+
+db.customers.find().count(); -> total records
+
+db.customers.find({gender:"male"}).count()  -> count using some particular criteria
+
+The way we connect middleware with backend is using a connector called Mongoose

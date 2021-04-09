@@ -1,0 +1,36 @@
+############# Node ################
+Node is built on Javascript engine
+Node is non-blocking(asynchronous)
+Node.js provide JS modules like http,fs,url,etc.
+It is a library
+
+To run on cmd : node <filename>
+
+Node has :
+1) Global Objects : Like __filename, __dirname
+2) setTimeout: when we need to execute something after some time 
+    parameters: function which we need to perform , time after which it should execute
+3)setInterval: If we need to call a function Iteratively after some interval of time
+setTimeout on the other executes function only once
+4) Modules: Use it using import statement
+   Inbuilt Module - http,fs(file system)
+   External Module - express
+   Go to npmjs.com and there we can see all the modules
+5) Http module
+
+## To install Express: npm install express
+
+REPL(Read Eval Print Loop)
+Write node on cmd -> This will open Node shell and can be used for REPL to do simple operations or calculations
+To exit: ctrl+c twice
+
+
+### Components:
+1) Import required Modules (using "require" directive)
+2) Create Server
+3) Read request and return response
+
+npm: Node Package Manager
+$ npm init -y
+$ npm install
+$ npm install <Module name>

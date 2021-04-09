@@ -1,0 +1,58 @@
+@@@@@@@@@ Shortcuts for templates
+rconst -> for constructor
+rce -> for class components
+rfce -> for functional components
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+##### Components ########
+-> They are building blocks of any React app
+-> They let you split UI into independent,reusable pieces and work on each piece in isolation
+->They are like JavaScript Functions which take arbitary inputs like 'props' and o/p React elements
+->Naming shoul start with Capital Letter
+
+Types of Components:
+1) Functional Component: It is a JavaScript Functions which take arbitary inputs like 'props' and o/p React elements
+  Eg: const Student=(props)=>{
+      return <h1>Hello {props.name}</h1>
+  }
+
+2) Class Component: It requires you to extend it from React component
+                    It must implement a render() method which return React elements
+                    Props are accessible via this.props
+  E.g: class Class_name extends Component{
+      render(){
+          return React element
+      }
+  }
+
+
+### Rendering a List ###
+
+-> Map() method: It generate a new list with results of calling a function for every array element
+  Key gives each element a identity
+  Use index as key when items do not have unique id, but it is not a good option, use only when list is static
+
+
+######## Forms  ########
+
+
+
+### HTTP ###
+npm install axios
+hTTP calls -> get,post
+
+@@ Component Lifecycle methods @@  -> This works only for Class Components
+*Mounting -> constructor,getDerivedStateFromProps,render, componentDidMount() -> one of  lifecycle methods which gets called internally whenever first time 
+*Updating -> called everytime a component is updated,
+,shouldComponentUpdate render,componentDidUpdate.
+*Unmounting -> componentWillUnmount (clean up activities)
+*Error Handling ->getDerivedStateFromError,componentDidCatch
+
+
+### Styling #####
+Using Class
+Module CSS  
+Inline
+
+
+#### Routing : For creating links to webpages #####
